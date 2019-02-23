@@ -55,12 +55,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/NET/">NET</a></li>
-	        
-				<li><a href="/SQL/">SQL</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -81,7 +75,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/GMaTao" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -115,18 +109,12 @@
 			
 				
 			
-				
-			
-				
-			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/GMaTao" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -138,16 +126,10 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
-		        
-					<li style="width: 25%"><a href="/NET/">NET</a></li>
-		        
-					<li style="width: 25%"><a href="/SQL/">SQL</a></li>
-		        
-					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,20 +153,42 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/RabbitMQ/">RabbitMQ</a>
+      <a class="article-title" href="/2019/02/23/RabbitMQ/">简单理解什么RabbitMQ</a>
     </h1>
   
 
         
         <a href="/2019/02/23/RabbitMQ/" class="archive-article-date">
-  	<time datetime="2019-02-23T12:14:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
+  	<time datetime="2019-02-23T12:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="简单理解什么RabbitMQ"><a href="#简单理解什么RabbitMQ" class="headerlink" title="简单理解什么RabbitMQ"></a>简单理解什么RabbitMQ</h4><ul>
+<li>MQ的一个产品【消息队列】</li>
+<li>集群，消息确认，内存化，高可用，镜像特点</li>
+<li>ActiveMQ，ZeroMQ，RabbitMQ 目前主流的消息队列产品<h4 id="Rabbitmq本质"><a href="#Rabbitmq本质" class="headerlink" title="Rabbitmq本质"></a>Rabbitmq本质</h4></li>
+<li>rabbitmq是用什么语言写的  =&gt; erlang</li>
+<li>rabbitmq其实是遵循 amqp协议 的一个erlang代码实现<h4 id="其他协议"><a href="#其他协议" class="headerlink" title="其他协议"></a>其他协议</h4><ul>
+<li>http协议，  【request，response】</li>
+<li>telnet协议： 经常用来查看某一台ip上指定端口是否是ping通的。。【远程登陆协议】</li>
+</ul>
+</li>
+<li>AMQP 0-9-1 Complete Reference Guide  rabbitmq实现的ampq协议的版本号。。。<ol>
+<li>connection     =&gt; open,use,close   [open-ok,close,une-ok]</li>
+<li>channel        =&gt; open,flow,close  [构建在connection之上，在amqp中常作为长连接。。。]</li>
+<li>exchange 交换</li>
+<li>queue  消息队列</li>
+<li>=》发布 和 获取 message中的一些设置</li>
+<li>=》 事务处理</li>
+<li>confirm =》发布确认机制</li>
+</ol>
+</li>
+<li>一张设计图了解rabbitmq的元素。。。<br><img src="https://www.39cn.net/mayt/201902/rq.png" alt="image"></li>
+</ul>
+
       
 
       
