@@ -146,6 +146,124 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SingleTance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/18/SingleTance/">C#单例</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/18/SingleTance/" class="archive-article-date">
+  	<time datetime="2019-03-18T12:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="不考虑线程安全"><a href="#不考虑线程安全" class="headerlink" title="不考虑线程安全"></a>不考虑线程安全</h2><p>解析如下：</p>
+<p>　　1）首先，该singleInstance的构造函数必须是私有的，以保证客户程序不会通过new（）操作产生一个实例，达到实现单例的目的；</p>
+<p>　　2）因为静态变量的生命周期跟整个应用程序的生命周期是一样的，所以可以定义一个私有的静态全局变量instance来保存该类的唯一实例；</p>
+<p>　　3）必须提供一个全局函数访问获得该实例，并且在该函数提供控制实例数量的功能，即通过if语句判断singleInstance是否已被实例化，如果没有则可以同new（）创建一个实例；否则，直接向客户返回一个实例。</p>
+<p>　　在这种经典模式下，没有考虑线程并发获取实例问题，即可能出现两个线程同时获取instance实例，且此时其为null时，就会出现两个线程分别创建了instance，违反了单例规则。因此，需对上面代码修改。</p>
+<pre><code>Publi class singleInstance  
+{
+    private singleInstance(){}  
+    private static singleInstance instance;  
+    public static Singleton GetInstance()  
+    {
+        if(instance==null)  
+            {
+            instance=new singleInstance();  
+            }  
+        return instance;  
+    }  
+}
+</code></pre><h2 id="第二种为多线程下的单例模式，考虑了线程安全"><a href="#第二种为多线程下的单例模式，考虑了线程安全" class="headerlink" title="第二种为多线程下的单例模式，考虑了线程安全"></a>第二种为多线程下的单例模式，考虑了线程安全</h2><pre><code>public class Singleton
+{
+   private static Singleton instance;
+   private static object _lock=new object();
+
+   private Singleton()
+   {
+
+   }
+
+   public static Singleton GetInstance()
+   {
+           if(instance==null)
+           {
+                  lock(_lock)
+                  {
+                         if(instance==null)
+                         {
+                                 instance=new Singleton();
+                         }
+                  }
+           }
+           return instance;
+   }
+}
+</code></pre><h2 id="第三种饿汉模式"><a href="#第三种饿汉模式" class="headerlink" title="第三种饿汉模式"></a>第三种饿汉模式</h2><pre><code>public sealed class Singleton
+{
+    private static readonly Singleton instance=new Singleton();
+
+    private Singleton()
+    {
+    }
+
+    public static Singleton GetInstance()
+    {
+           return instance;
+    }
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/18/SingleTance/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Thread" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
