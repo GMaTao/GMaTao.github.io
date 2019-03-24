@@ -146,6 +146,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MVC01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/24/MVC01/">MVC基础用法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/24/MVC01/" class="archive-article-date">
+  	<time datetime="2019-03-24T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Action指定视图"><a href="#Action指定视图" class="headerlink" title="Action指定视图"></a>Action指定视图</h3><ul>
+<li>return View() 不给参数默认为同名的视图</li>
+<li>return View(“OtherView”)使用OtherView.cshtml</li>
+<li>return View(“~/Views/Home/Test.cshtml”)</li>
+</ul>
+<p>ViewBag.userName 和ViewData(“userName”)重复  ViewData会覆盖到ViewBag的值 因为它们本质上都是ViewDateDictionnary类型。TempData是临时存储的 存储一次就失效了</p>
+<h3 id="HemlHelper"><a href="#HemlHelper" class="headerlink" title="HemlHelper"></a>HemlHelper</h3><ul>
+<li>@Html.ActionLlink()</li>
+<li>HemlHelper Form <ul>
+<li>@using(Html.BeginForm(“HandleForm”, “home”))</li>
+<li>@using(Html.BeginForm(“add”, “home”,FormMethod.Post,new{id=”form1”}))</li>
+</ul>
+</li>
+<li>@Html.Lable(“Username”)</li>
+</ul>
+<h3 id="网站性能优化"><a href="#网站性能优化" class="headerlink" title="网站性能优化"></a>网站性能优化</h3><p>OutputCache 属性<br>在Action 方法添加特性<br>[OutputCache（Duration=5,VaryByParam=”Noe”）]<br>缓存时间每隔5秒 响应Http请求<br>Response.Cache.SetOmitVaryStar(True) 在Action 方法里可以解决一个隐蔽的BUG  </p>
+<p>[OutputCache（Duration=5,VaryByParam=”Name”）]  </p>
+<p>在视图中获取的Name 每隔五秒拿一个  </p>
+<ul>
+<li>使用防伪令牌来避免CSRF攻击<ul>
+<li>在表单中添加@Html.AntiForgeryToken()  只能添加在Html.BeginForm 中在Html的Form 中无效  它会写一个</li>
+</ul>
+</li>
+<li>Nginx 服务器集群<ul>
+<li>正向代理服务器是一个位于客户端和原始服务器中间的一个代理服务器 比如FQ服务器</li>
+<li>反向代理服务器 是在服务器接受客户端的请求，然后将请求分发给具体的服务器进行处理，再讲服务器的结果反馈给客户 NginX 就是其中一款反向代理服务软件  这里做的其实就是讲信息分发给具体服务器，有专门的服务器处理再返回给客户端。</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MVC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/24/MVC01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Angular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1059,6 +1161,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
             <div class="clearfix"></div>
