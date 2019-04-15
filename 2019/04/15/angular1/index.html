@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Mayt</title>
+  <title>Angular快速入门(环境搭建1) | Mayt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="框架搭建类型查找器 在Core层 InFrastructure 中添加两个文件AppDomainTypeFinder、ITypeFinder 可以参考NOP项目中的文件 主要功能是通过iis 自动找出Dll应用，实现网站的热插拔功能   在webcore 中引用Core  这个是一个Web的公共方法。 创建一个类WebTypeFinder 继承AppDomainTypeFinder 可以实现Web">
+  <meta name="description" content="AngularAngular 环境搭建 安装前准备工作： 安装nodejs安装angular 的计算机上面必须安装最新的nodejs–注意安装nodejs 稳定版本 安装cnpmnpm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装https://npm.taobao.org/npm install -g cnpm --registry=https://registry.npm.ta">
+<meta name="keywords" content="qd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mayt">
-<meta property="og:url" content="http://yoursite.com/2019/03/31/Infrastructure/index.html">
+<meta property="og:title" content="Angular快速入门(环境搭建1)">
+<meta property="og:url" content="http://yoursite.com/2019/04/15/angular1/index.html">
 <meta property="og:site_name" content="Mayt">
-<meta property="og:description" content="框架搭建类型查找器 在Core层 InFrastructure 中添加两个文件AppDomainTypeFinder、ITypeFinder 可以参考NOP项目中的文件 主要功能是通过iis 自动找出Dll应用，实现网站的热插拔功能   在webcore 中引用Core  这个是一个Web的公共方法。 创建一个类WebTypeFinder 继承AppDomainTypeFinder 可以实现Web">
+<meta property="og:description" content="AngularAngular 环境搭建 安装前准备工作： 安装nodejs安装angular 的计算机上面必须安装最新的nodejs–注意安装nodejs 稳定版本 安装cnpmnpm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装https://npm.taobao.org/npm install -g cnpm --registry=https://registry.npm.ta">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-31T03:25:30.108Z">
+<meta property="og:image" content="https://www.39cn.net/mayt/angular/1.png">
+<meta property="og:image" content="https://www.39cn.net/mayt/angular/2.png">
+<meta property="og:updated_time" content="2019-04-15T13:45:23.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mayt">
-<meta name="twitter:description" content="框架搭建类型查找器 在Core层 InFrastructure 中添加两个文件AppDomainTypeFinder、ITypeFinder 可以参考NOP项目中的文件 主要功能是通过iis 自动找出Dll应用，实现网站的热插拔功能   在webcore 中引用Core  这个是一个Web的公共方法。 创建一个类WebTypeFinder 继承AppDomainTypeFinder 可以实现Web">
+<meta name="twitter:title" content="Angular快速入门(环境搭建1)">
+<meta name="twitter:description" content="AngularAngular 环境搭建 安装前准备工作： 安装nodejs安装angular 的计算机上面必须安装最新的nodejs–注意安装nodejs 稳定版本 安装cnpmnpm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装https://npm.taobao.org/npm install -g cnpm --registry=https://registry.npm.ta">
+<meta name="twitter:image" content="https://www.39cn.net/mayt/angular/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mayt" type="application/atom+xml">
   
@@ -168,17 +172,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Infrastructure" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-angular1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular快速入门(环境搭建1)
+    </h1>
+  
+
+        
+        <a href="/2019/04/15/angular1/" class="archive-article-date">
+  	<time datetime="2019-04-15T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="框架搭建"><a href="#框架搭建" class="headerlink" title="框架搭建"></a>框架搭建</h2><h3 id="类型查找器"><a href="#类型查找器" class="headerlink" title="类型查找器"></a>类型查找器</h3><ol>
-<li>在Core层 InFrastructure 中添加两个文件AppDomainTypeFinder、ITypeFinder 可以参考NOP项目中的文件 主要功能是通过iis 自动找出Dll应用，实现网站的热插拔功能  </li>
-<li>在webcore 中引用Core  这个是一个Web的公共方法。 创建一个类WebTypeFinder 继承AppDomainTypeFinder 可以实现Web应用程序下的BIN 查找</li>
-<li>UnityMvcActivator 在MVC Application_Start 之前注入</li>
-<li>DependencyResolver.SetResolver(new UnityDependencyResolver(UnityConfig.Container));  <em>DependencyResolver</em> 它是MVC自带的注册器  将系统的 注册器替换为Unity</li>
+        <h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><h2 id="Angular-环境搭建"><a href="#Angular-环境搭建" class="headerlink" title="Angular 环境搭建"></a>Angular 环境搭建</h2><ol>
+<li>安装前准备工作：<ol>
+<li>安装nodejs<br>安装angular 的计算机上面必须安装最新的nodejs–注意安装nodejs 稳定版本</li>
+<li>安装cnpm<br>npm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装<br><a href="https://npm.taobao.org/" title="npm" target="_blank" rel="noopener">https://npm.taobao.org/</a><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
+<li>使用npm/cnpm 命令安装angular/cli （只需要安装一次）<br><code>npm install -g @angular/cli 或者cnpm install -g @angular/cli</code><h2 id="Angular-创建项目"><a href="#Angular-创建项目" class="headerlink" title="Angular 创建项目"></a>Angular 创建项目</h2></li>
 </ol>
+</li>
+<li>打开命令行工具找到你要创建项目的目录</li>
+<li>创建项目  <ol>
+<li>ng new 项目名称 直接安装：<code>ng new angulardemo</code> 如果要跳过npm i 安装：<code>ng new angulardemo --skip-install</code><br><img src="https://www.39cn.net/mayt/angular/1.png" alt>  </li>
+</ol>
+</li>
+<li>运行项目<br>cd angulardemo<br>ng serve –open<h2 id="Angular-环境搭建以及创建项目的时候可能遇到的错误"><a href="#Angular-环境搭建以及创建项目的时候可能遇到的错误" class="headerlink" title="Angular 环境搭建以及创建项目的时候可能遇到的错误"></a>Angular 环境搭建以及创建项目的时候可能遇到的错误</h2>1、npm 安装angular/cli 失败  </li>
+</ol>
+<p>解决方案：用cnpm 安装  </p>
+<p>2、创建项目npm i 的时候失败<br>解决方案1：ctrl+c 结束项目，cd 到项目里面，用cnpm i 安装依赖  </p>
+<p>解决方案2：创建项目的时候–skip-install  </p>
+<pre><code>ng new my-app --skip-install
+cd my-app
+cnpm install / yarn //整理使用Install 或者yarn  来还原包 
+</code></pre><p>3、创建项目后用npm i 或者cnpm i 后项目没法运行<br>解决方案：用yarn 替代cnpm 和npm<br>1 cnpm instal @angular/cli (我的npm 会报错)；<br>2 ng new 的时候阻止自动安装ng 包，只创建ng 目录<br>ng new my-app –skip-install<br>3 安装yarn<br> npm install -g yarn / cnpm install -g yarn<br>4 进入目录my-app 使用yarn 安装ng 所依赖的包yarn<br>注意：yarn 命令等同于npm install / cnpm install 使用yarn 前提是先安装yarn ,<br>安装使用cnpm install -g yarn 就可以安装  </p>
+<h2 id="Angular-开发工具介绍"><a href="#Angular-开发工具介绍" class="headerlink" title="Angular 开发工具介绍"></a>Angular 开发工具介绍</h2><p>1.Webstorm<br>2.Visual Studio Code<br><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a><br>安装插件<br> <img src="https://www.39cn.net/mayt/angular/2.png" alt>  </p>
 
       
 
@@ -218,6 +253,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">qd</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -268,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/31/Infrastructure/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/15/angular1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,9 +328,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/04/15/Angular2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Angular快速入门(环境搭建2)
+        
+      </div>
+    </a>
   
-    <a href="/2019/03/24/github/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+  
+    <a href="/2019/03/24/MVC01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVC基础用法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -323,7 +378,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/03/31/Infrastructure/",
+  id: "http://yoursite.com/2019/04/15/angular1/",
   owner: 'GMaTao',
   repo: 'GMaTao.github.io',
   oauth: {
