@@ -59,13 +59,17 @@
 	        
 				<li><a href="/tags/qd/">前端</a></li>
 	        
+				<li><a href="/tags/DDD/">DDD</a></li>
+	        
+				<li><a href="/tags/Spring/">Spring</a></li>
+	        
+				<li><a href="/tags/APS/">APS</a></li>
+	        
+				<li><a href="/tags/Project/">项目管理</a></li>
+	        
 				<li><a href="/tags/book/">读书</a></li>
 	        
 				<li><a href="/tags/sorce/">资源</a></li>
-	        
-				<li><a href="/tags/DDD/">DDD</a></li>
-	        
-				<li><a href="/tags/Project/">项目管理</a></li>
 	        
 			</ul>
 		</nav>
@@ -131,6 +135,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -149,19 +157,23 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
+					<li style="width: 11.11111111111111%"><a href="/">主页</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Net/">ASP.Net</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/Net/">ASP.Net</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/qd/">前端</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/qd/">前端</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/book/">读书</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/DDD/">DDD</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/sorce/">资源</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/Spring/">Spring</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/DDD/">DDD</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/APS/">APS</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/tags/Project/">项目管理</a></li>
+					<li style="width: 11.11111111111111%"><a href="/tags/Project/">项目管理</a></li>
+		        
+					<li style="width: 11.11111111111111%"><a href="/tags/book/">读书</a></li>
+		        
+					<li style="width: 11.11111111111111%"><a href="/tags/sorce/">资源</a></li>
 		        
 				</ul>
 			</nav>
@@ -177,6 +189,101 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-my-fisrt-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/23/my-fisrt-blog/">github搭建网站系列一</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/23/my-fisrt-blog/" class="archive-article-date">
+  	<time datetime="2019-02-23T04:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>前言
+    准备工作
+GitHub创建静态网站
+     创建仓库
+     域名解析
+配置SSH key
+Hexo搭建网站
+    简介
+    安装
+    创建HEXO网站
+    编辑及发布
+    注意事项
+最终效果
+参考
+</code></pre><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><blockquote>
+<p>在开始一切之前，你必须已经：</p>
+<ul>
+<li>github账号</li>
+<li>安装了node.js、npm，并了解相关基础知识</li>
+<li>安装了git for windows（或者其它git客户端）</li>
+</ul>
+</blockquote>
+<h2 id="GitHub创建静态网站"><a href="#GitHub创建静态网站" class="headerlink" title="GitHub创建静态网站"></a>GitHub创建静态网站</h2><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><ol>
+<li><p>新建一个名为你的用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> 了，是不是很方便？</p>
+<p>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库。</p>
+<p>几个注意的地方：</p>
+<p>注册的邮箱一定要验证，否则不会成功；<br>仓库名字必须是：username.github.io，其中username是你的用户名；<br>创建成功后，默认会在你这个仓库里生成一些示例页面，以后你的网站所有代码都是放在这个仓库里啦。</p>
+<h4 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h4></li>
+</ol>
+<p>当然，你不绑定域名肯定也是可以的，就用默认的 <code>xxx.github.io</code> 来访问，如果你想更个性一点，想拥有一个属于自己的域名，那也是OK的。</p>
+<p>首先你要注册一个域名，域名注册现在总是推荐去<a href="http://www.39cn.net" target="_blank" rel="noopener">39互联</a>，<br>
+        
+          <a class="article-more-a" href="/2019/02/23/my-fisrt-blog/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/23/my-fisrt-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Infrastructure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -460,7 +567,7 @@ public bool Join(TimeSpan timeout);　　　　　　 //时间段
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Mayt
+    		&copy; 2020 Mayt
     	</div>
       	<div class="footer-right">
       		<a href="https://gitee.com/tom_ma" target="_blank">Tom_Ma's Blog</a>  Theme <a href="https://gitee.com/tom_ma" target="_blank">Tom_Ma</a> by Litten
@@ -548,6 +655,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Net</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">book</a>
               </li>
             
             <div class="clearfix"></div>
