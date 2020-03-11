@@ -445,12 +445,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Angular-目录结构分析"><a href="#Angular-目录结构分析" class="headerlink" title="Angular 目录结构分析"></a>Angular 目录结构分析</h2><h3 id="一、目录结构分析"><a href="#一、目录结构分析" class="headerlink" title="一、目录结构分析"></a>一、目录结构分析</h3><p><img src="https://www.39cn.net/mayt/angular/3.png" alt>  </p>
-<h3 id="二-app-module-ts、组件分析"><a href="#二-app-module-ts、组件分析" class="headerlink" title="二 app.module.ts、组件分析"></a>二 app.module.ts、组件分析</h3><p>1、app.module.ts<br>定义AppModule ， 这个根模块会告诉Angular 如何组装该应用。目前， 它只声明了<br>AppComponent。稍后它还会声明更多组件。<br><img src="https://www.39cn.net/mayt/angular/4.png" alt><br>2、自定义组件<br>    ng g component components/header<br><img src="https://www.39cn.net/mayt/angular/5.png" alt>     </p>
-<h3 id="三、绑定数据"><a href="#三、绑定数据" class="headerlink" title="三、绑定数据"></a>三、绑定数据</h3><ol>
-<li>Angular中使用两个花括号绑定业务逻辑里面定义的数据  </li>
-</ol>
-
+        <h2 id="Angular-目录结构分析"><a href="#Angular-目录结构分析" class="headerlink" title="Angular 目录结构分析"></a>Angular 目录结构分析</h2><h3 id="一、目录结构分析"><a href="#一、目录结构分析" class="headerlink" title="一、目录结构分析"></a>一、目录结构分析</h3>
+        
+          <a class="article-more-a" href="/2019/04/15/Angular2/#more">more >></a>
+        
       
 
       
@@ -526,30 +524,14 @@
         <h1 id="Angular"><a href="#Angular" class="headerlink" title="Angular"></a>Angular</h1><h2 id="Angular-环境搭建"><a href="#Angular-环境搭建" class="headerlink" title="Angular 环境搭建"></a>Angular 环境搭建</h2><ol>
 <li>安装前准备工作：<ol>
 <li>安装nodejs<br>安装angular 的计算机上面必须安装最新的nodejs–注意安装nodejs 稳定版本</li>
-<li>安装cnpm<br>npm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装<br><a href="https://npm.taobao.org/" title="npm" target="_blank" rel="noopener">https://npm.taobao.org/</a><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-<li>使用npm/cnpm 命令安装angular/cli （只需要安装一次）<br><code>npm install -g @angular/cli 或者cnpm install -g @angular/cli</code><h2 id="Angular-创建项目"><a href="#Angular-创建项目" class="headerlink" title="Angular 创建项目"></a>Angular 创建项目</h2></li>
-</ol>
-</li>
-<li>打开命令行工具找到你要创建项目的目录</li>
-<li>创建项目  <ol>
-<li>ng new 项目名称 直接安装：<code>ng new angulardemo</code> 如果要跳过npm i 安装：<code>ng new angulardemo --skip-install</code><br><img src="https://www.39cn.net/mayt/angular/1.png" alt>  </li>
-</ol>
-</li>
-<li>运行项目<br>cd angulardemo<br>ng serve –open<h2 id="Angular-环境搭建以及创建项目的时候可能遇到的错误"><a href="#Angular-环境搭建以及创建项目的时候可能遇到的错误" class="headerlink" title="Angular 环境搭建以及创建项目的时候可能遇到的错误"></a>Angular 环境搭建以及创建项目的时候可能遇到的错误</h2>1、npm 安装angular/cli 失败  </li>
-</ol>
-<p>解决方案：用cnpm 安装  </p>
-<p>2、创建项目npm i 的时候失败<br>解决方案1：ctrl+c 结束项目，cd 到项目里面，用cnpm i 安装依赖  </p>
-<p>解决方案2：创建项目的时候–skip-install  </p>
-<pre><code>ng new my-app --skip-install
-cd my-app
-cnpm install / yarn //整理使用Install 或者yarn  来还原包 
-</code></pre><p>3、创建项目后用npm i 或者cnpm i 后项目没法运行<br>解决方案：用yarn 替代cnpm 和npm<br>1 cnpm instal @angular/cli (我的npm 会报错)；<br>2 ng new 的时候阻止自动安装ng 包，只创建ng 目录<br>ng new my-app –skip-install<br>3 安装yarn<br> npm install -g yarn / cnpm install -g yarn<br>4 进入目录my-app 使用yarn 安装ng 所依赖的包yarn<br>注意：yarn 命令等同于npm install / cnpm install 使用yarn 前提是先安装yarn ,<br>安装使用cnpm install -g yarn 就可以安装  </p>
-<h2 id="Angular-开发工具介绍"><a href="#Angular-开发工具介绍" class="headerlink" title="Angular 开发工具介绍"></a>Angular 开发工具介绍</h2><p>1.Webstorm<br>2.Visual Studio Code<br><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a><br>安装插件<br> <img src="https://www.39cn.net/mayt/angular/2.png" alt>  </p>
-
+<li>安装cnpm<br>npm 可能安装失败建议先用npm 安装一下cnpm 用淘宝镜像安装
+        
+          <a class="article-more-a" href="/2019/04/15/angular1/#more">more >></a>
+        
       
 
       
-    </div>
+    </li></ol></li></ol></div>
     <div class="article-info article-info-index">
       
       
