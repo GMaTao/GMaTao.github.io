@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>摘句 | Mayt</title>
+  <title>系统架构中的认证中心 | Mayt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序员修炼之道  Critically Analyze What You Read an Hear 在所有弱点中， 最大的弱点就是害怕暴露弱点 提供各种选择，不要找蹩脚的理由 Dont’t Live With Broken Winfows">
-<meta name="keywords" content="book">
+  <meta name="description" content="摘要：看到一张关于认证中心的架构思路，图片内容画的还比较清晰，在不管在.NET 还是在Java平台中这种架构模式应该是很科学的，在这里分享出来。">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="摘句">
-<meta property="og:url" content="http://yoursite.com/2020/03/09/haojuzi/index.html">
+<meta property="og:title" content="系统架构中的认证中心">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/OAuth/index.html">
 <meta property="og:site_name" content="Mayt">
-<meta property="og:description" content="程序员修炼之道  Critically Analyze What You Read an Hear 在所有弱点中， 最大的弱点就是害怕暴露弱点 提供各种选择，不要找蹩脚的理由 Dont’t Live With Broken Winfows">
+<meta property="og:description" content="摘要：看到一张关于认证中心的架构思路，图片内容画的还比较清晰，在不管在.NET 还是在Java平台中这种架构模式应该是很科学的，在这里分享出来。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-09T09:34:16.548Z">
+<meta property="og:image" content="http://120.79.136.217/Spring/OAuth2.png">
+<meta property="og:updated_time" content="2020-04-23T02:30:10.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="摘句">
-<meta name="twitter:description" content="程序员修炼之道  Critically Analyze What You Read an Hear 在所有弱点中， 最大的弱点就是害怕暴露弱点 提供各种选择，不要找蹩脚的理由 Dont’t Live With Broken Winfows">
+<meta name="twitter:title" content="系统架构中的认证中心">
+<meta name="twitter:description" content="摘要：看到一张关于认证中心的架构思路，图片内容画的还比较清晰，在不管在.NET 还是在Java平台中这种架构模式应该是很科学的，在这里分享出来。">
+<meta name="twitter:image" content="http://120.79.136.217/Spring/OAuth2.png">
   
     <link rel="alternative" href="/atom.xml" title="Mayt" type="application/atom+xml">
   
@@ -193,32 +195,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-haojuzi" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-OAuth" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      摘句
+      系统架构中的认证中心
     </h1>
   
 
         
-        <a href="/2020/03/09/haojuzi/" class="archive-article-date">
-  	<time datetime="2020-03-09T09:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+        <a href="/2020/04/09/OAuth/" class="archive-article-date">
+  	<time datetime="2020-04-09T01:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="程序员修炼之道"><a href="#程序员修炼之道" class="headerlink" title="程序员修炼之道"></a>程序员修炼之道</h3><hr>
+        <blockquote>
+<p>摘要：看到一张关于认证中心的架构思路，图片内容画的还比较清晰，在不管在.NET 还是在Java平台中这种架构模式应该是很科学的，在这里分享出来。<br><a id="more"></a></p>
+</blockquote>
+<h3 id="微服务架构中，我们的鉴权流程是这样："><a href="#微服务架构中，我们的鉴权流程是这样：" class="headerlink" title="微服务架构中，我们的鉴权流程是这样："></a>微服务架构中，我们的鉴权流程是这样：</h3><p><img src="http://120.79.136.217/Spring/OAuth2.png" alt></p>
 <ol>
-<li>Critically Analyze What You Read an Hear</li>
-<li>在所有弱点中， 最大的弱点就是害怕暴露弱点</li>
-<li>提供各种选择，不要找蹩脚的理由</li>
-<li>Dont’t Live With Broken Winfows </li>
+<li>客户端携带用户名密码发送登录请求到网关。</li>
+<li>网关收到请求之后，将请求路由到统一认证中心。</li>
+<li>统一认证中心确认用户的身份没有问题之后，将返回一个 access_token 给网关。</li>
+<li>网关将 access_token 转发到客户端。</li>
+<li>客户端将获取到的 access_token 放在请求头中去请求真正的微服务，当然这个操作依然会被网关拦下。</li>
+<li>网关将客户端的请求路由到微服务上，接下来微服务需要根据 access_token 鉴定用户身份。</li>
+<li>微服务可以调用统一认证中心去检验用户身份，如果我们采用了 JWT 的话，这一步实际上可以省略。</li>
+<li>微服务确认了用户身份和权限之后，就可以根据实际情况返回数据给用户了。</li>
 </ol>
 
       
@@ -264,7 +273,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
         		</li>
       		
 		</ul>
@@ -320,7 +329,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/09/haojuzi/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/09/OAuth/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +343,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/10/StartProject/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          怎么开一次成功的项目启动会
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/09/cxybook/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">开发人员必读的11本最具影响力书籍</div>
+    <a href="/2020/03/10/StartProject/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">怎么开一次成功的项目启动会</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,7 +384,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/03/09/haojuzi/",
+  id: "http://yoursite.com/2020/04/09/OAuth/",
   owner: 'GMaTao',
   repo: 'GMaTao.github.io',
   oauth: {
