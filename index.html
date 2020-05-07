@@ -190,6 +190,143 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Expression" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/Expression/">Expression</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/07/Expression/" class="archive-article-date">
+  	<time datetime="2020-05-07T07:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>lambda表达式树，它是一种二叉树 一种数据结构，可以被我们解析。</p>
+</blockquote>
+<p>Expression Tree Visualizer 是一个集成在Visual Studio中的工具，用于在运行时以树状结构显示出指定的Expression。<br><img src="https://ssl-static.fishlee.net/blog/wp-content/uploads/2015/06/expression_tree_visualizer_for_vs2015-1024x558.png" alt></p>
+<pre><code>Expression&lt;Func&lt;int, int, int&gt;&gt; exp = (m, n) =&gt; m * n + 2; 
+//源码解析 
+ParameterExpression parameterExpression = Expression.Parameter(typeof(int), &quot;m&quot;);
+        ParameterExpression parameterExpression2 = Expression.Parameter(typeof(int), &quot;n&quot;);
+        Expression&lt;Func&lt;int, int, int&gt;&gt; expression = Expression.Lambda&lt;Func&lt;int, int, int&gt;&gt;
+            (Expression.Add(Expression.Multiply(parameterExpression, parameterExpression2),
+            Expression.Constant(2, typeof(int))), 
+            new ParameterExpression[]
+        {
+            parameterExpression,
+            parameterExpression2
+        });
+
+//构造过后的代码
+ParameterExpression parameterExpression = Expression.Parameter(typeof(int), &quot;m&quot;);
+ParameterExpression parameterExpression2 = Expression.Parameter(typeof(int), &quot;n&quot;);
+var multiply = Expression.Multiply(parameterExpression, parameterExpression2);
+var constant = Expression.Constant(2, typeof(int));
+var add = Expression.Add(multiply, constant);
+
+Expression&lt;Func&lt;int, int, int&gt;&gt; expression =
+Expression.Lambda&lt;Func&lt;int, int, int&gt;&gt;(
+add,
+new ParameterExpression[]
+{
+parameterExpression,
+parameterExpression2
+});
+
+int iResult1 = exp.Compile().Invoke(11, 12);
+int iResult2 = expression.Compile().Invoke(11, 12);
+//exm2
+Expression&lt;Func&lt;People, bool&gt;&gt; lambda = x =&gt; x.Id.ToString().Equals(&quot;5&quot;);
+ParameterExpression parameterExpression = Expression.Parameter(typeof(People), &quot;x&quot;);
+        Expression&lt;Func&lt;People, bool&gt;&gt; expression = Expression.Lambda&lt;Func&lt;People, bool&gt;&gt;(Expression.Call(Expression.Call(Expression.Field(parameterExpression, FieldInfo.GetFieldFromHandle(ldtoken(Id))), (MethodInfo)MethodBase.GetMethodFromHandle(ldtoken(ToString())), new Expression[0]), (MethodInfo)MethodBase.GetMethodFromHandle(ldtoken(Equals())), new Expression[]
+        {
+            Expression.Constant(&quot;5&quot;, typeof(string))
+        }), new ParameterExpression[]
+        {
+            parameterExpression
+        });
+ParameterExpression parameterExpression = Expression.Parameter(typeof(People), &quot;x&quot;);
+            var field = Expression.Field(parameterExpression, typeof(People).GetField(&quot;Id&quot;));
+            var toString = typeof(People).GetMethod(&quot;ToString&quot;);
+            var toStringCall = Expression.Call(field, toString, new Expression[0]);
+            var equals = typeof(People).GetMethod(&quot;Equals&quot;);
+            var constant = Expression.Constant(&quot;5&quot;, typeof(string));
+            var equalsCall = Expression.Call(toStringCall, equals, new Expression[] { constant });
+            Expression&lt;Func&lt;People, bool&gt;&gt; expression =
+                Expression.Lambda&lt;Func&lt;People, bool&gt;&gt;(equalsCall, new ParameterExpression[]
+                    {
+                    parameterExpression
+                    });
+
+            expression.Compile().Invoke(new People()
+            {
+                Id = 11,
+                Name = &quot;Eleven&quot;,
+                Age = 31
+            });
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Net</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/07/Expression/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-lean" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -880,80 +1017,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/24/sorce1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Angular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/18/Angular/">Angular快速入门</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/18/Angular/" class="archive-article-date">
-  	<time datetime="2019-03-18T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一：-Angular快速入门"><a href="#一：-Angular快速入门" class="headerlink" title="一： Angular快速入门"></a>一： Angular快速入门</h2><p>1 安装node.js<br>2 npm i -g @angular/cli 安装CLI工具<br>3 ng new myapp 用Cli创建一个新的angular 应用在桌面上<br>4 npm -i 还原node moduls<br>5 ng serve –open启动应用</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">qd</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/18/Angular/">展开全文 >></a>
         </p>
       
 

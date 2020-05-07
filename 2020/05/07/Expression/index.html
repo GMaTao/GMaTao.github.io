@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Mayt</title>
+  <title>Expression | Mayt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mayt">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="lambda表达式树，它是一种二叉树 一种数据结构，可以被我们解析。  Expression Tree Visualizer 是一个集成在Visual Studio中的工具，用于在运行时以树状结构显示出指定的Expression。 Expression&amp;lt;Func&amp;lt;int, int, int&amp;gt;&amp;gt; exp = (m, n) =&amp;gt; m * n + 2;  //源码解析">
+<meta name="keywords" content="Net">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Expression">
+<meta property="og:url" content="http://yoursite.com/2020/05/07/Expression/index.html">
 <meta property="og:site_name" content="Mayt">
+<meta property="og:description" content="lambda表达式树，它是一种二叉树 一种数据结构，可以被我们解析。  Expression Tree Visualizer 是一个集成在Visual Studio中的工具，用于在运行时以树状结构显示出指定的Expression。 Expression&amp;lt;Func&amp;lt;int, int, int&amp;gt;&amp;gt; exp = (m, n) =&amp;gt; m * n + 2;  //源码解析">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://ssl-static.fishlee.net/blog/wp-content/uploads/2015/06/expression_tree_visualizer_for_vs2015-1024x558.png">
+<meta property="og:updated_time" content="2020-05-07T07:32:30.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mayt">
+<meta name="twitter:title" content="Expression">
+<meta name="twitter:description" content="lambda表达式树，它是一种二叉树 一种数据结构，可以被我们解析。  Expression Tree Visualizer 是一个集成在Visual Studio中的工具，用于在运行时以树状结构显示出指定的Expression。 Expression&amp;lt;Func&amp;lt;int, int, int&amp;gt;&amp;gt; exp = (m, n) =&amp;gt; m * n + 2;  //源码解析">
+<meta name="twitter:image" content="https://ssl-static.fishlee.net/blog/wp-content/uploads/2015/06/expression_tree_visualizer_for_vs2015-1024x558.png">
   
     <link rel="alternative" href="/atom.xml" title="Mayt" type="application/atom+xml">
   
@@ -188,36 +195,129 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Expression" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/07/Expression/" class="archive-article-date">
-  	<time datetime="2020-05-07T07:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/Expression/">Expression</a>
+    <h1 class="article-title" itemprop="name">
+      Expression
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/07/Expression/" class="archive-article-date">
+  	<time datetime="2020-05-07T07:08:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>lambda表达式树，它是一种二叉树 一种数据结构，可以被我们解析。</p>
+</blockquote>
+<p>Expression Tree Visualizer 是一个集成在Visual Studio中的工具，用于在运行时以树状结构显示出指定的Expression。<br><img src="https://ssl-static.fishlee.net/blog/wp-content/uploads/2015/06/expression_tree_visualizer_for_vs2015-1024x558.png" alt></p>
+<pre><code>Expression&lt;Func&lt;int, int, int&gt;&gt; exp = (m, n) =&gt; m * n + 2; 
+//源码解析 
+ParameterExpression parameterExpression = Expression.Parameter(typeof(int), &quot;m&quot;);
+        ParameterExpression parameterExpression2 = Expression.Parameter(typeof(int), &quot;n&quot;);
+        Expression&lt;Func&lt;int, int, int&gt;&gt; expression = Expression.Lambda&lt;Func&lt;int, int, int&gt;&gt;
+            (Expression.Add(Expression.Multiply(parameterExpression, parameterExpression2),
+            Expression.Constant(2, typeof(int))), 
+            new ParameterExpression[]
+        {
+            parameterExpression,
+            parameterExpression2
+        });
+
+//构造过后的代码
+ParameterExpression parameterExpression = Expression.Parameter(typeof(int), &quot;m&quot;);
+ParameterExpression parameterExpression2 = Expression.Parameter(typeof(int), &quot;n&quot;);
+var multiply = Expression.Multiply(parameterExpression, parameterExpression2);
+var constant = Expression.Constant(2, typeof(int));
+var add = Expression.Add(multiply, constant);
+
+Expression&lt;Func&lt;int, int, int&gt;&gt; expression =
+Expression.Lambda&lt;Func&lt;int, int, int&gt;&gt;(
+add,
+new ParameterExpression[]
+{
+parameterExpression,
+parameterExpression2
+});
+
+int iResult1 = exp.Compile().Invoke(11, 12);
+int iResult2 = expression.Compile().Invoke(11, 12);
+//exm2
+Expression&lt;Func&lt;People, bool&gt;&gt; lambda = x =&gt; x.Id.ToString().Equals(&quot;5&quot;);
+ParameterExpression parameterExpression = Expression.Parameter(typeof(People), &quot;x&quot;);
+        Expression&lt;Func&lt;People, bool&gt;&gt; expression = Expression.Lambda&lt;Func&lt;People, bool&gt;&gt;(Expression.Call(Expression.Call(Expression.Field(parameterExpression, FieldInfo.GetFieldFromHandle(ldtoken(Id))), (MethodInfo)MethodBase.GetMethodFromHandle(ldtoken(ToString())), new Expression[0]), (MethodInfo)MethodBase.GetMethodFromHandle(ldtoken(Equals())), new Expression[]
+        {
+            Expression.Constant(&quot;5&quot;, typeof(string))
+        }), new ParameterExpression[]
+        {
+            parameterExpression
+        });
+ParameterExpression parameterExpression = Expression.Parameter(typeof(People), &quot;x&quot;);
+            var field = Expression.Field(parameterExpression, typeof(People).GetField(&quot;Id&quot;));
+            var toString = typeof(People).GetMethod(&quot;ToString&quot;);
+            var toStringCall = Expression.Call(field, toString, new Expression[0]);
+            var equals = typeof(People).GetMethod(&quot;Equals&quot;);
+            var constant = Expression.Constant(&quot;5&quot;, typeof(string));
+            var equalsCall = Expression.Call(toStringCall, equals, new Expression[] { constant });
+            Expression&lt;Func&lt;People, bool&gt;&gt; expression =
+                Expression.Lambda&lt;Func&lt;People, bool&gt;&gt;(equalsCall, new ParameterExpression[]
+                    {
+                    parameterExpression
+                    });
+
+            expression.Compile().Invoke(new People()
+            {
+                Id = 11,
+                Name = &quot;Eleven&quot;,
+                Age = 31
+            });
+</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://www.39cn.net/pay/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://www.39cn.net/pay/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -229,209 +329,122 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/07/Expression/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/24/lean/" class="archive-article-date">
-  	<time datetime="2020-04-24T01:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/24/lean/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">later equals never</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/24/lean/">later equals never</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/09/OAuth/" class="archive-article-date">
-  	<time datetime="2020-04-09T01:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/09/OAuth/">系统架构中的认证中心</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/StartProject/" class="archive-article-date">
-  	<time datetime="2020-03-10T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/StartProject/">怎么开一次成功的项目启动会</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/09/haojuzi/" class="archive-article-date">
-  	<time datetime="2020-03-09T09:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        </div>
-    	 
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/05/07/Expression/",
+  owner: 'GMaTao',
+  repo: 'GMaTao.github.io',
+  oauth: {
+    client_id: '87f148e16fee7f3472e2',
+    client_secret: '497fee723ff6e49bbc4e7657d796ca4d0680bbb8',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/haojuzi/">摘句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/09/cxybook/" class="archive-article-date">
-  	<time datetime="2020-03-09T01:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/cxybook/">开发人员必读的11本最具影响力书籍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -454,8 +467,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
