@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Mayt</title>
+  <title>Redis专题 | Mayt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mayt">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="Nosqlweb1.0 —-&amp;gt;web2.0—&amp;gt;web 3.0   web1.0：网络-人（单向信息，只读，只能看不能评论）； web2.0：人-人（以网络为沟通渠道进行人与人沟通，博客，看新闻可以评论）； web3.0：人-网络-人（形成人和网络以及网络与人的沟通，提高人与人沟通的便利性） NoSQL = Not Only SQL （不仅仅是SQL）关系型数据库：表格，行，列很多的数据">
+<meta name="keywords" content="Net">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis专题">
+<meta property="og:url" content="http://yoursite.com/2020/05/29/redis/index.html">
 <meta property="og:site_name" content="Mayt">
+<meta property="og:description" content="Nosqlweb1.0 —-&amp;gt;web2.0—&amp;gt;web 3.0   web1.0：网络-人（单向信息，只读，只能看不能评论）； web2.0：人-人（以网络为沟通渠道进行人与人沟通，博客，看新闻可以评论）； web3.0：人-网络-人（形成人和网络以及网络与人的沟通，提高人与人沟通的便利性） NoSQL = Not Only SQL （不仅仅是SQL）关系型数据库：表格，行，列很多的数据">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-29T09:37:00.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mayt">
+<meta name="twitter:title" content="Redis专题">
+<meta name="twitter:description" content="Nosqlweb1.0 —-&amp;gt;web2.0—&amp;gt;web 3.0   web1.0：网络-人（单向信息，只读，只能看不能评论）； web2.0：人-人（以网络为沟通渠道进行人与人沟通，博客，看新闻可以评论）； web3.0：人-网络-人（形成人和网络以及网络与人的沟通，提高人与人沟通的便利性） NoSQL = Not Only SQL （不仅仅是SQL）关系型数据库：表格，行，列很多的数据">
   
     <link rel="alternative" href="/atom.xml" title="Mayt" type="application/atom+xml">
   
@@ -194,236 +199,131 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-redis" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Redis专题
+    </h1>
+  
+
+        
+        <a href="/2020/05/29/redis/" class="archive-article-date">
+  	<time datetime="2020-05-29T02:24:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Nosql"><a href="#Nosql" class="headerlink" title="Nosql"></a>Nosql</h2><p>web1.0 —-&gt;web2.0—&gt;web 3.0  </p>
+<p>web1.0：网络-人（单向信息，只读，只能看不能评论）；</p>
+<p>web2.0：人-人（以网络为沟通渠道进行人与人沟通，博客，看新闻可以评论）；</p>
+<p>web3.0：人-网络-人（形成人和网络以及网络与人的沟通，提高人与人沟通的便利性）</p>
+<p>NoSQL = Not Only SQL （不仅仅是SQL）关系型数据库：表格，行，列<br>很多的数据类型用户的个人信息，社交网络，地理位置。这些数据类型的存储不需要一个固定的格式！</p>
+<p>不需要多余的操作就可以横向扩展的！Hastable&lt;String,Object&gt; 使用键值对来控制！</p>
+<p>大数据时代的3V：</p>
+<p>主要是描述问题的</p>
+<ol>
+<li>海量Volume</li>
+<li>多样Variety</li>
+<li>实时Velocity</li>
+</ol>
+<p>大数据时代的3高：主要是对程序的要求</p>
+<ol>
+<li>高并发</li>
+<li>高可扩</li>
+<li>高性能</li>
+</ol>
+<h2 id="Nosql的特点（解耦！）"><a href="#Nosql的特点（解耦！）" class="headerlink" title="Nosql的特点（解耦！）"></a>Nosql的特点（解耦！）</h2><ol>
+<li>方便扩展（数据之间没有关系，很好扩展！）</li>
+<li>大数据量高性能（Redis 一秒写8万次，读取11万）</li>
+<li>数据类型是多样型的！（不需要事先设计数据库！不需要像关系数据库那样，开发之前先要设计<br>表，经不起大的改动）</li>
+</ol>
+<h2 id="Redis-remote-dictionary-server）"><a href="#Redis-remote-dictionary-server）" class="headerlink" title="Redis remote dictionary server）"></a>Redis remote dictionary server）</h2><p>Web之友–8大数据结构，常用5大–关系型数据库不好做的，都可以找Redis</p>
+<p>Redis经常提到的各种名词，单线程多进程–度多路复用 集群 事务 持久化</p>
+<h2 id="环境介绍–redis版本-可视化管理工具-压测工具-展示个数据"><a href="#环境介绍–redis版本-可视化管理工具-压测工具-展示个数据" class="headerlink" title="环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)"></a>环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)</h2><p>.NET Core的驱动—ServiceStack.Redis（6000次请求）–自行破解<br>简单的读写操作，（set key value ,get key） keys *</p>
+<h2 id="环境介绍–redis版本-可视化管理工具-压测工具-展示个数据-1"><a href="#环境介绍–redis版本-可视化管理工具-压测工具-展示个数据-1" class="headerlink" title="环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)"></a>环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)</h2><p>分布式缓存–3个客户端演示（一个客户端写，其余两个客户端读）<br>应用场景：分布式缓存 分布式session共享 分布式锁</p>
+<p>##.redis单线程解析<br>误区一.多线程（cpu上下文会切换）一定比单线程快</p>
+<p>误区二.高性能的服务一定是多线程？</p>
+<p>误区三.redis 单线程不是说整个redis服务只有一个线程<br>CPU&gt;内存&gt;硬盘</p>
+<p>redis 的所有数据都存放在内存中，所有使用单线程操作效率最高，不存在cpu上下文切换的耗时<br>操作</p>
+<p>单线程–原子性–线程安全—平时多线程开发习惯，是不好理解—秒杀的案例—秒杀的困境—<br>防止超卖–单线程+组合命令（在同一时刻只会执行一条指令）</p>
+<p>##.通过秒杀实例演示-&gt; string 演示基本的api操作<br>string类型–多实例–简单分布式缓存–自增自检–单线程–秒杀控制—实例</p>
+<p>##.存储一个对象，对某一个对象字段修改（需要做序列化）–》hash<br>redis做缓存，其实大部分用的不是string 用string都是菜鸟入门–</p>
+<p>##.节省空间 -》比对string和hash的内存分布原理<br>string 类型是成倍增长内存，浪费内存</p>
+<p>hash 使用ziplist 和hashtabl （当有大量字段的时候需要浪费一点查询的时间）</p>
+<p>string类型的存储分两种：</p>
+<p>embstr 专门保存短字符串， Redis3.0之后长度不超过44Byte(之前是39) 用这个存储，直接连<br>续空间存储，遇到的机会不多</p>
+<p>再就是动态字符串SDS：默认类型。有两个特点：</p>
+<p>1 空间预分配，不仅分配足够的空间给字符串，还直接预留部分空间，增长时空间不够了，不仅是分<br>配足够的空间，还会额外增加一些预备空间，其数值是可以配置的</p>
+<p>2 惰性释放：缩短字符串，不会回收空间，除非用户主动调用api</p>
+<p>hash类型的存储也是2种：</p>
+<p>1 plist（2.6之前是zipmap），压缩列表，key-value-key-value，连续摆放的</p>
+<p>2 hashtable：就是典型的字典存储，有一块儿独立空间，保存key-value的集合，通过hash计算<br>key来安排value的位置</p>
+<p>当哈希对象可以同时满足以下两个条件时， 哈希对象使用 ziplist 编码：<br>哈希对象保存的所有键值对的键和值的字符串长度都小于 64 字节；<br>哈希对象保存的键值对数量小于 512 个；<br>官方建议，优先使用hash<br>Use hashes when possible</p>
+<h1 id="八种数据类型"><a href="#八种数据类型" class="headerlink" title="八种数据类型"></a>八种数据类型</h1><ol>
+<li>string 字符串</li>
+<li>hash 哈希</li>
+<li>list 集合</li>
+<li>set 去重集合</li>
+<li>zset 去重集合+分数</li>
+<li>BitMaps 是在字符串类型上面定义的位操作。一个字节由 8 个二进制位组成</li>
+<li>hyperlogloss 提供了一种不太准确的基数统计方法</li>
+<li>streams 支持多播的可持久化的消息队列，用于实现发布订阅功能，借鉴了 kafka 的设计</li>
+</ol>
+<p>##string 字符串##<br>字符数组必须先给目标变量分配足够的空间，否则可能会溢出<br>查询字符数组长度 时间复杂度O(n)<br>长度变化，需要重新分配内存</p>
+<p>@注意：每次当内存满的时候二倍的增长</p>
+<p>#使用场景</p>
+<ol>
+<li>缓存</li>
+<li>分布式session</li>
+<li>分布式锁</li>
+<li>计数器 incr （文章的阅读量，点赞数，评论数，秒杀）</li>
+<li>限流 （以访问者的 IP 和其他信息作为 key，访问一次增加一次计数，超过次数则返回 false）</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://www.39cn.net/pay/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://www.39cn.net/pay/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/10/StartProject/" class="archive-article-date">
-  	<time datetime="2020-03-10T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/10/StartProject/">怎么开一次成功的项目启动会</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/09/haojuzi/" class="archive-article-date">
-  	<time datetime="2020-03-09T09:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/haojuzi/">摘句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/09/cxybook/" class="archive-article-date">
-  	<time datetime="2020-03-09T01:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/cxybook/">开发人员必读的11本最具影响力书籍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/Angular2/" class="archive-article-date">
-  	<time datetime="2019-04-15T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/Angular2/">Angular快速入门(环境搭建2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">qd</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/angular1/" class="archive-article-date">
-  	<time datetime="2019-04-15T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/angular1/">Angular快速入门(环境搭建1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">qd</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/24/MVC01/" class="archive-article-date">
-  	<time datetime="2019-03-24T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/MVC01/">MVC基础用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -435,174 +335,130 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/29/redis/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/24/sorce1/" class="archive-article-date">
-  	<time datetime="2019-03-24T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/06/02/MVC02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MVC
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/26/mps/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MPS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/sorce1/">20200310项目思维重塑职场竞争力（杨述）.pdf</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sorce</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/18/Angular/" class="archive-article-date">
-  	<time datetime="2019-03-18T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/18/Angular/">Angular快速入门</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">qd</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/18/SingleTance/" class="archive-article-date">
-  	<time datetime="2019-03-18T12:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/18/SingleTance/">C#单例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/15/github/" class="archive-article-date">
-  	<time datetime="2019-03-15T14:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/15/github/">Git 码云相关操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Net</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/05/29/redis/",
+  owner: 'GMaTao',
+  repo: 'GMaTao.github.io',
+  oauth: {
+    client_id: '87f148e16fee7f3472e2',
+    client_secret: '497fee723ff6e49bbc4e7657d796ca4d0680bbb8',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -626,8 +482,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

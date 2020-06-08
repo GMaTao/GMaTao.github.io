@@ -196,6 +196,237 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MVC02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/MVC02/">MVC</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/02/MVC02/" class="archive-article-date">
+  	<time datetime="2020-06-02T03:27:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="T4模板目录VS2019"><a href="#T4模板目录VS2019" class="headerlink" title="T4模板目录VS2019"></a>T4模板目录VS2019</h3><ul>
+<li>C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\Web\Mvc\Scaffolding\Templates</li>
+<li>优先查找项目中的CodeTemplates 再找系统目录</li>
+</ul>
+<h3 id="验证框架"><a href="#验证框架" class="headerlink" title="验证框架"></a>验证框架</h3><p>FluentValidation 是一个基于 .NET 开发的验证框架，开源免费，而且优雅，支持链式操作，易于理解，功能完善，还是可与 MVC5、WebApi2 和 ASP.NET CORE 深度集成，组件内提供十几种常用验证器，可扩展性好，支持自定义验证器，支持本地化多语言。</p>
+<p>虽然 FluentValidation 是一个非常强大的验证框架，但针对该框架的中文资料并不完善，零度在学习的过程中，将官方文档进行了翻译，由此产生本文，可供参阅。</p>
+<p>要使用验证框架, 需要在项目中添加对 FluentValidation.dll 的引用，支持 netstandard2.0 库和 .NET4.5 平台，支持.NET Core 平台，最简单的方法是使用 NuGet 包管理器引用组件。</p>
+<blockquote>
+<p>Install-Package FluentValidation</p>
+</blockquote>
+<p>若要在 ASP.NET Core 中使用 FluentValidation 扩展，可引用以下包：</p>
+<blockquote>
+<p>Install-Package FluentValidation.AspNetCore</p>
+</blockquote>
+<p>若要在 ASP.NET MVC 5 或 WebApi 2 项目集成, 可以使用分别使用 FluentValidation.Mvc5 和 FluentValidation.WebApi 程序包。</p>
+<blockquote>
+<p>Install-Package FluentValidation.Mvc5</p>
+</blockquote>
+<p>Install-Package FluentValidation.WebApi</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Net</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/02/MVC02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-redis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/redis/">Redis专题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/29/redis/" class="archive-article-date">
+  	<time datetime="2020-05-29T02:24:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Nosql"><a href="#Nosql" class="headerlink" title="Nosql"></a>Nosql</h2><p>web1.0 —-&gt;web2.0—&gt;web 3.0  </p>
+<p>web1.0：网络-人（单向信息，只读，只能看不能评论）；</p>
+<p>web2.0：人-人（以网络为沟通渠道进行人与人沟通，博客，看新闻可以评论）；</p>
+<p>web3.0：人-网络-人（形成人和网络以及网络与人的沟通，提高人与人沟通的便利性）</p>
+<p>NoSQL = Not Only SQL （不仅仅是SQL）关系型数据库：表格，行，列<br>很多的数据类型用户的个人信息，社交网络，地理位置。这些数据类型的存储不需要一个固定的格式！</p>
+<p>不需要多余的操作就可以横向扩展的！Hastable&lt;String,Object&gt; 使用键值对来控制！</p>
+<p>大数据时代的3V：</p>
+<p>主要是描述问题的</p>
+<ol>
+<li>海量Volume</li>
+<li>多样Variety</li>
+<li>实时Velocity</li>
+</ol>
+<p>大数据时代的3高：主要是对程序的要求</p>
+<ol>
+<li>高并发</li>
+<li>高可扩</li>
+<li>高性能</li>
+</ol>
+<h2 id="Nosql的特点（解耦！）"><a href="#Nosql的特点（解耦！）" class="headerlink" title="Nosql的特点（解耦！）"></a>Nosql的特点（解耦！）</h2><ol>
+<li>方便扩展（数据之间没有关系，很好扩展！）</li>
+<li>大数据量高性能（Redis 一秒写8万次，读取11万）</li>
+<li>数据类型是多样型的！（不需要事先设计数据库！不需要像关系数据库那样，开发之前先要设计<br>表，经不起大的改动）</li>
+</ol>
+<h2 id="Redis-remote-dictionary-server）"><a href="#Redis-remote-dictionary-server）" class="headerlink" title="Redis remote dictionary server）"></a>Redis remote dictionary server）</h2><p>Web之友–8大数据结构，常用5大–关系型数据库不好做的，都可以找Redis</p>
+<p>Redis经常提到的各种名词，单线程多进程–度多路复用 集群 事务 持久化</p>
+<h2 id="环境介绍–redis版本-可视化管理工具-压测工具-展示个数据"><a href="#环境介绍–redis版本-可视化管理工具-压测工具-展示个数据" class="headerlink" title="环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)"></a>环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)</h2><p>.NET Core的驱动—ServiceStack.Redis（6000次请求）–自行破解<br>简单的读写操作，（set key value ,get key） keys *</p>
+<h2 id="环境介绍–redis版本-可视化管理工具-压测工具-展示个数据-1"><a href="#环境介绍–redis版本-可视化管理工具-压测工具-展示个数据-1" class="headerlink" title="环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)"></a>环境介绍–redis版本 可视化管理工具 压测工具(展示个数据)</h2><p>分布式缓存–3个客户端演示（一个客户端写，其余两个客户端读）<br>应用场景：分布式缓存 分布式session共享 分布式锁</p>
+<p>##.redis单线程解析<br>误区一.多线程（cpu上下文会切换）一定比单线程快</p>
+<p>误区二.高性能的服务一定是多线程？</p>
+<p>误区三.redis 单线程不是说整个redis服务只有一个线程<br>CPU&gt;内存&gt;硬盘</p>
+<p>redis 的所有数据都存放在内存中，所有使用单线程操作效率最高，不存在cpu上下文切换的耗时<br>操作</p>
+<p>单线程–原子性–线程安全—平时多线程开发习惯，是不好理解—秒杀的案例—秒杀的困境—<br>防止超卖–单线程+组合命令（在同一时刻只会执行一条指令）</p>
+<p>##.通过秒杀实例演示-&gt; string 演示基本的api操作<br>string类型–多实例–简单分布式缓存–自增自检–单线程–秒杀控制—实例</p>
+<p>##.存储一个对象，对某一个对象字段修改（需要做序列化）–》hash<br>redis做缓存，其实大部分用的不是string 用string都是菜鸟入门–</p>
+<p>##.节省空间 -》比对string和hash的内存分布原理<br>string 类型是成倍增长内存，浪费内存</p>
+<p>hash 使用ziplist 和hashtabl （当有大量字段的时候需要浪费一点查询的时间）</p>
+<p>string类型的存储分两种：</p>
+<p>embstr 专门保存短字符串， Redis3.0之后长度不超过44Byte(之前是39) 用这个存储，直接连<br>续空间存储，遇到的机会不多</p>
+<p>再就是动态字符串SDS：默认类型。有两个特点：</p>
+<p>1 空间预分配，不仅分配足够的空间给字符串，还直接预留部分空间，增长时空间不够了，不仅是分<br>配足够的空间，还会额外增加一些预备空间，其数值是可以配置的</p>
+<p>2 惰性释放：缩短字符串，不会回收空间，除非用户主动调用api</p>
+<p>hash类型的存储也是2种：</p>
+<p>1 plist（2.6之前是zipmap），压缩列表，key-value-key-value，连续摆放的</p>
+<p>2 hashtable：就是典型的字典存储，有一块儿独立空间，保存key-value的集合，通过hash计算<br>key来安排value的位置</p>
+<p>当哈希对象可以同时满足以下两个条件时， 哈希对象使用 ziplist 编码：<br>哈希对象保存的所有键值对的键和值的字符串长度都小于 64 字节；<br>哈希对象保存的键值对数量小于 512 个；<br>官方建议，优先使用hash<br>Use hashes when possible</p>
+<h1 id="八种数据类型"><a href="#八种数据类型" class="headerlink" title="八种数据类型"></a>八种数据类型</h1><ol>
+<li>string 字符串</li>
+<li>hash 哈希</li>
+<li>list 集合</li>
+<li>set 去重集合</li>
+<li>zset 去重集合+分数</li>
+<li>BitMaps 是在字符串类型上面定义的位操作。一个字节由 8 个二进制位组成</li>
+<li>hyperlogloss 提供了一种不太准确的基数统计方法</li>
+<li>streams 支持多播的可持久化的消息队列，用于实现发布订阅功能，借鉴了 kafka 的设计</li>
+</ol>
+<p>##string 字符串##<br>字符数组必须先给目标变量分配足够的空间，否则可能会溢出<br>查询字符数组长度 时间复杂度O(n)<br>长度变化，需要重新分配内存</p>
+<p>@注意：每次当内存满的时候二倍的增长</p>
+<p>#使用场景</p>
+<ol>
+<li>缓存</li>
+<li>分布式session</li>
+<li>分布式锁</li>
+<li>计数器 incr （文章的阅读量，点赞数，评论数，秒杀）</li>
+<li>限流 （以访问者的 IP 和其他信息作为 key，访问一次增加一次计数，超过次数则返回 false）</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Net</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/29/redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mps" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -216,18 +447,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="主生产排程的意义"><a href="#主生产排程的意义" class="headerlink" title="主生产排程的意义"></a>主生产排程的意义</h2><p>MPS是一个生产排程，他指出一个工厂在何时？生产什么产品？以及生产多少？<br>MPS是一个短期？（一周至三个月）可执行的生产计划<br>MPS不是销售计划，它是与现场密切相关的计划，不是销售预测计划。为决定所需产能与物料计划与物料之基础计划<br>MPS仍然依据现有库存、业务部门已接订单、需求预测、并考虑现有零组件或物料库存、及现有的各种产能限制后，所提出的可执行之生产排程。<br>MPS不仅介于生产与销售中间的模块，为生产与销售之前的重要环节。MPS是PMC运作时所依据的<strong>执行计划</strong>。  </p>
-<p><img src="http://120.79.136.217/APS/20200526170053.png" alt><br><img src="http://120.79.136.217/APS/20200526170054.png" alt>  </p>
-<p>##MPS策略##<br>MPS Objective<br>目标为使MPS计划除能满足客户订单交期需求外，同时考虑产能与物料限制、降低存货成本或换线成本。。。等  </p>
-<p>MPS策略<br>1.平准化生产策略  </p>
-<p>2.追随策略</p>
-<p>3.批量生产</p>
-<p>4.Other</p>
-
+        <h2 id="主生产排程的意义"><a href="#主生产排程的意义" class="headerlink" title="主生产排程的意义"></a>主生产排程的意义</h2><p>MPS是一个生产排程，他指出一个工厂在何时？生产什么产品？以及生产多少？<br>MPS是一个短期？（一周至三个月）可执行的生产计划<br>MPS不是销售计划，它是与现场密切相关的计划，不是销售预测计划。为决定所需产能与物料计划与物料之基础计划<br>MPS仍然依据现有库存、业务部门已接订单、需求预测、并考虑现有零组件或物料库存、及现有的各种产能限制后，所提出的可执行之生产排程。<br>MPS不仅介于生产与销售中间的模块，为生产与销售之前的重要环节。MPS是PMC运作时所依据的<strong>执行计划</strong>。<br>
+        
+          <a class="article-more-a" href="/2020/05/26/mps/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -1146,164 +1373,6 @@ ParameterExpression parameterExpression = Expression.Parameter(typeof(People), &
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/09/OAuth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-StartProject" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/10/StartProject/">怎么开一次成功的项目启动会</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/10/StartProject/" class="archive-article-date">
-  	<time datetime="2020-03-10T06:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>   对于一个项目来说，<strong>启动会是一个非常重要的里程碑事件</strong>，意味着我们已经完成了对项目可行性的研究和分析。</p>
-<p>同时项目获得组织授权授权进入规划阶段，并且会逐步增加相关资源推动项目实施。</p>
-<p>讲到这里，大家都应该明白，如此重要的项目启动会，绝不是仅仅把人聚在一起宣告项目开始那么简单。<br>
-        
-          <a class="article-more-a" href="/2020/03/10/StartProject/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/10/StartProject/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-haojuzi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/haojuzi/">摘句</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/09/haojuzi/" class="archive-article-date">
-  	<time datetime="2020-03-09T09:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="程序员修炼之道"><a href="#程序员修炼之道" class="headerlink" title="程序员修炼之道"></a>程序员修炼之道</h3><hr>
-<ol>
-<li>Critically Analyze What You Read an Hear</li>
-<li>在所有弱点中， 最大的弱点就是害怕暴露弱点</li>
-<li>提供各种选择，不要找蹩脚的理由</li>
-<li>Dont’t Live With Broken Winfows </li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">book</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/haojuzi/">展开全文 >></a>
         </p>
       
 
